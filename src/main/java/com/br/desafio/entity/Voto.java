@@ -12,7 +12,7 @@ import static jakarta.persistence.GenerationType.AUTO;
 @AllArgsConstructor
 @Builder
 @Entity(name = "VOTO")
-@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"USUARIO_ID", "idSessao"})})
+@Table(uniqueConstraints = {@UniqueConstraint(columnNames = {"USUARIO_ID", "idPauta"})})
 @Getter
 @Setter
 public class Voto {

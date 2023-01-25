@@ -10,4 +10,6 @@ public interface PautaRepository extends JpaRepository<Pauta, Long> {
     @Override
     List<Pauta> findAll();
 
+    List<Pauta> findAllByStatus(String status);
+
 }

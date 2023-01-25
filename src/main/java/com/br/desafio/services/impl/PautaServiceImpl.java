@@ -13,6 +13,8 @@ import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
+import static com.br.desafio.config.Constantes.ABERTA;
+
 @Component
 public class PautaServiceImpl implements PautaService {
 
@@ -25,11 +27,12 @@ public class PautaServiceImpl implements PautaService {
     }
 
     @Override
-    public Pauta criarPauta(Pauta fromDTO) {
-        log.info("Iniciando criação da pauta " + fromDTO.getTitulo() + " em: " + LocalDateTime.now());
-        fromDTO.setDataAbertura(new Date());
-        pautaRepository.save(fromDTO);
-        return fromDTO;
+    public Pauta criarPauta(Pauta pauta) {
+        log.info("Iniciando criação da pauta " + pauta.getTitulo() + " em: " + LocalDateTime.now());
+        pauta.setDataAbertura(new Date());
+        pauta.setStatus(ABERTA);
+        pautaRepository.save(pauta);
+        return pauta;
     }
 
     @Override
