@@ -49,11 +49,6 @@ OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.9.1+1, mixed mode)
 
 ## Ambiente Linux
 
-### Executar os testes automatizados:
-
-````
-mvn test -P dev
-````
 ### Empacotar dependencias
 ```
 mvn package -DskipTests
@@ -69,11 +64,6 @@ docker-compose -f docker-compose.yml up -d
 
 ## Ambiente Windows
 
-### Executar os testes automatizados:
-
-````
-mvn test -P dev
-````
 ### Empacotar dependencias
 ```
 mvn package -DskipTests
@@ -171,7 +161,7 @@ POST http://localhost:8080/api/v1/votos
 ### Consultar resultado da pauta
 ```
 
-GET localhost:8080/api/v1/resultadoVotacao/1/{id}
+GET localhost:8080/api/v1/resultadoVotacao/{id}
 
 ``` 
 
