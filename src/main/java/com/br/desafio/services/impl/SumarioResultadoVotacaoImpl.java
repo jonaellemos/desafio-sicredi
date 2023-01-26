@@ -78,17 +78,4 @@ public class SumarioResultadoVotacaoImpl implements SumarioResultadoVotacaoServi
         return votosFiltrados.size();
     }
 
-    public void encerrarPautaeSessoes(Optional<Pauta> pauta){
-        log.info("Encerrando Sessões e Pauta.");
-        pauta.get().setDataFechamento(new Date());
-        pauta.get().setStatus(ENCERRADA);
-        pautaRepository.save(pauta.get());
-
-        for (Sessao sessao : pauta.get().getSessoes()) {
-            sessao.setStatus(ENCERRADA);
-            sessao.setDataFechamento(LocalDateTime.now());
-            sessaoRespository.save(sessao);
-        }
-
-    }
 }
